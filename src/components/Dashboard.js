@@ -1,9 +1,10 @@
 import React from 'react'
+import Header from './Header'
 
 
 const Dashboard =() => (
     <div>
-        This is my dashboard.
+        <Header />     
     </div>
 )
 export default Dashboard;
