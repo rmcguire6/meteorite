@@ -1,13 +1,14 @@
 import React, {Component} from 'react';
 import './App.css';
+import SearchBar from './components/SearchBar'
 import SearchList from './components/SearchList'
 
 class App extends Component {
   state = {
-   
+    name: '',
     data: []
   }
-  componentDidMount(props) {
+  componentDidMount() {
     try {
       fetch('https://data.nasa.gov/resource/gh4g-9sfh.json').then((response)=> {
       response.json().then((data) => {
@@ -25,21 +26,24 @@ class App extends Component {
   }
 }
 
+handleSearchChange = (name) => {
+    this.setState(() => ({
+      name: name
+    }))
 
-
+}
   render() {
+    let filteredList = []
+    filteredList = this.state.data.filter(item => item.name.toLowerCase().includes(this.state.name.toLowerCase()))
   return (
     <div className="App">
       <div className="App-header">
       <h2>Meteorite Explorer</h2> 
       </div>
       <div className="search-panel">
-        <form className="search-bar"onSubmit={this.handleSubmit}>
-        <input placeholder="Type your search here"/>
-        <button className="button">Search</button>
-        </form> 
-        <SearchList list={this.state.data}/>
-       </div>
+        <SearchBar handleSearchChange ={this.handleSearchChange} />
+        {this.state.name !== '' ? <SearchList list={filteredList}/> : <SearchList list={this.state.data} />}
+      </div>
     </div>
   );
   }
