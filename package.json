@@ -8,7 +8,9 @@
     "react-dom": "^16.14.0",
     "react-scripts": "^4.0.3"
   },
-  "scripts": {
+  "engines": {
+    "node": "12.x"
+  },  "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
