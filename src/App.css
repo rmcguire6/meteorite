@@ -1,9 +1,10 @@
+:root {
+  --clr-nasa-blue: #0b3d91;
+  --clr-nasa-orange: #fc3d21;
+}
 .App {
   text-align: center;
-}
-.App-header {
-  background-color: dodgerblue;
-  min-height: 5vh;
+  background-color: var(--clr-nasa-blue);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -14,7 +15,7 @@ body {
   margin: 0 auto;
 }
 .button {
-  background-color: #5454e4;
+  background-color: var(--clr-nasa-orange);
 }
 .list-element {
   min-width: 100vw;
@@ -22,11 +23,8 @@ body {
 .search-bar {
   background-color: white;
   margin: 2rem;
-
 }
 .search-panel {
-  background-color: navy;
-  padding: 2vh;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -35,8 +33,6 @@ body {
   min-width: 100vw;
 }
 .search-results {
-  background-color: yellow;
+  background-color: #fc3d21;
   color: black;
-  }
-
-
+}
