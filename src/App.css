@@ -29,10 +29,10 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: #888;
+  color: var(--clr-nasa-orange);
   min-width: 100vw;
 }
 .search-results {
-  background-color: #fc3d21;
+  background-color: var(--clr-nasa-orange);
   color: black;
 }
